@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { environment } from 'src/environments/environment';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './infrastructure/routes/app-routing.module';
 import { AppComponent } from './app.component';
+import { ApplicationService } from './infrastructure/services/application.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxsModule.forRoot([], {
+      developmentMode: !environment.production,
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ApplicationService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

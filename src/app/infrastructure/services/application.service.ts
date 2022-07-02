@@ -1,10 +1,10 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { environment } from "src/environments/environment";
-import { AuthUserRequest, RegistrationUserRequest } from "../types/api-request.types";
-import { AuthUserResponse } from "../types/api-response.types";
-import { HttpHelper } from "../utils/http-helper";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { AuthUserRequest, RegistrationUserRequest } from '../types/api-request.types';
+import { AuthUserResponse } from '../types/api-response.types';
+import { HttpHelper } from '../utils/http-helper';
 
 /**
  * @class

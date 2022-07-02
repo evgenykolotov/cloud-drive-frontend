@@ -1,5 +1,5 @@
-import { Store } from "@ngxs/store";
-import { asapScheduler, catchError, map, Observable, of } from "rxjs";
+import { Store } from '@ngxs/store';
+import { asapScheduler, catchError, map, Observable, of } from 'rxjs';
 
 export function dispatchAsap<T>(store: Store, actionResolver: (value: T) => unknown[] | unknown) {
   return (source: Observable<T>) => source.pipe(

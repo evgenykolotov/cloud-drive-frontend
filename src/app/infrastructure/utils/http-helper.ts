@@ -20,7 +20,7 @@ export class HttpHelper {
   public static combineUrlFragments(...paths: string[]): string {
     const rawUrl = paths.join('/');
     const urlFragments = rawUrl.split('/').filter(fragment => Boolean(fragment));
-    return `/${ urlFragments.join('/') }/`
+    return `/${ urlFragments.join('/') }/`;
   }
 
   /**
@@ -33,7 +33,7 @@ export class HttpHelper {
     const paramsResult = Object.keys(obj)
       .map<[string, string | number | boolean | undefined]>(key => ([key, obj[key]]))
       .filter(([_, value]) => value !== undefined)
-      .reduce((accumulator, [key, value]) => ({ ...accumulator, [key]: value}), {});
+      .reduce((accumulator, [key, value]) => ({ ...accumulator, [key]: value }), {});
     return new HttpParams({ fromObject: paramsResult });
   }
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   apiPath: '/api/',
-  production: false
+  production: false,
 };
 
 /*
